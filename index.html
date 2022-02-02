@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Covid Testing Locations</title>
+</head>
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Covid Testing Locations</h1>
+        <p class="lead">Find your local testing centers</p>
+    </header>
+    <div class="search-bar">
+        <h2>Type Your City Here</h2>
+        <input name="city-name" type="text" autofocus="true" class="form-input"/>
+        <button type="submit" class="btn">Find Locations</button>
+    </div>
+    <div class="map-area">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="locations-list">
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

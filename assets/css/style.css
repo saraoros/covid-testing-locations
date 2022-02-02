@@ -1,0 +1,26 @@
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid lightblue;
+  }
+
+.search-bar {
+    text-align: center;
+    width: 100%;
+}
+
+
+iframe {
+    width: 30%;
+    height: 400px;
+}
+
+.form-input {
+    margin-right: 20px;
+}
+
+body {
+    background-color: lemonchiffon;
+}
