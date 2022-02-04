@@ -7,10 +7,10 @@
     border-bottom: 10px solid lightblue;
   }
 
-/* .search-bar {
+.search-bar {
     text-align: center;
     width: 100%;
-} */
+}
 
 
 iframe {
@@ -18,16 +18,13 @@ iframe {
     height: 400px;
 }
 
-/* .form-input {
+.form-input {
     margin-right: 20px;
-} */
+}
 
 body {
     background-color: lemonchiffon;
 }
-
-
-
 
 
 .card {
