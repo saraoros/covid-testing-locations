@@ -1,3 +1,10 @@
+var cityInput = document.querySelector('#cityName');
+var userCardEl = document.querySelector('card');
+
+
+
+
+
 // // TA Daniel said that something in the lines of this will be us connecting google maps API and the covid api
 // const mapsData = getFromGMaps()
 // const lat = <from mapsData>
@@ -45,7 +52,7 @@ function initMap() {
   const melbourne = { lat: -37.8136, lng: 144.9631 };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
+    zoom: 8,
     center: new google.maps.LatLng(-33.92, 151.25),
   });
   // The marker, positioned at Uluru
@@ -66,3 +73,15 @@ function initMap() {
 }
 
 getLatLon();
+
+var formSubmitHandler = function (event) {
+    // prevents page from refreshing
+    event.preventDefault();
+  
+    // get value from input element??
+    // *** this isn't working! Need help correcting it. -so ***
+    cities = cityInput.value.trim();
+
+  };
+
+  userCardEl.addEventListener('click', formSubmitHandler);
