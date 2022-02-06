@@ -4,36 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    />
     <title>Covid-19 Testing Locations</title>
   </head>
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Covid-19 Testing Locations</h1>
       <p class="lead">Find your local testing centers</p>
+
+      <!-- Dropdown menu for recent searchs *** THE CLASSES WILL NEED TO BE CHANGED to REFLECT CSS LIBRARY -->
+      <div id="recents" class="select">
+        <select id="selectEl" class="is-hovered">
+            <option selected>Recent Searches</option>
+        </select>
+    </div>
     </header>
 
-    <!-- start of search input *** THIS CAN BE CHANGED & MODIFIED  *** -->
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4 mt-3">
-        <div class="card bg-light mb-3" style="max-width: 20rem">
-          <div class="card-header">Type Your City Here:</div>
-          <div class="card-body">
-            <input
-            id="cityName"
-              class="input is-info mr-5"
-              type="text"
-              placeholder="Info input"
-            />
-            <button type="submit" class="button is-link">Find Locations</button>
-          </div>
-        </div>
-      </div>
-    </main>
+    <!-- start of search input *** THE CLASSES WILL NEED TO BE CHANGED to REFLECT CSS LIBRARY  *** -->
+    <div class="columns is-mobile">
+        <div class="column">
+            <div class="field is-grouped is-grouped-centered">
+                <label class="label">Search by City</label>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="control">
+                    <input id="searchInput" name="userInput" class="input is-hovered" type="text" placeholder="Enter City"/>
+                </div>
+                <div class="control">
+                    <button id="search" class="button is-info">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>    
+    </div>
     <!-- end of search input -->
 
 
