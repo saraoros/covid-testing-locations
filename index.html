@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Covid Testing Locations</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+    />
+    <title>Covid-19 Testing Locations</title>
+  </head>
+  <body>
     <header class="jumbotron">
-        <h1 class="display-3">Covid Testing Locations</h1>
-        <p class="lead">Find your local testing centers</p>
+      <h1 class="display-3">Covid-19 Testing Locations</h1>
+      <p class="lead">Find your local testing centers</p>
     </header>
+
+    <!-- start of search input *** THIS CAN BE CHANGED & MODIFIED  *** -->
+    <main class="flex-row justify-space-between">
+      <div class="col-12 col-md-4 mt-3">
+        <div class="card bg-light mb-3" style="max-width: 20rem">
+          <div class="card-header">Type Your City Here:</div>
+          <div class="card-body">
+            <input
+            id="cityName"
+              class="input is-info mr-5"
+              type="text"
+              placeholder="Info input"
+            />
+            <button type="submit" class="button is-link">Find Locations</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- end of search input -->
+
+
+    <!-- ** goodwin's original input **
     <div class="search-bar">
         <h2>Type Your City Here</h2>
         <input name="city-name" type="text" autofocus="true" class="form-input"/>
         <button type="submit" class="btn">Find Locations</button>
-    </div>
-    <div class="map-area">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <div class="locations-list">
-    </div>
+    </div> -->
+    <!-- end of search input -->
+
+    <div class="locations-list"></div>
+
+    <!-- Start of google map-->
+    <div id="map"></div>
+
+    <!--End of google map-->
+
+
     <script src="./assets/js/script.js"></script>
-</body>
+
+    <!--google maps api link-->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ru-kBu2WnKkfIqZ6EgENC-cnbppoeRo&callback=initMap"
+    ></script>
+  </body>
 </html>
