@@ -1,6 +1,10 @@
+
+var citySearchInput = document.querySelector('#location-input');
+
 var userCardEl = document.querySelector('card');
 var searchButton = document.querySelector("#search");
 var recentsMenu = document.querySelector("#recents")
+
 
 // // TA Daniel said that something in the lines of this will be us connecting google maps API and the covid api
 // const mapsData = getFromGMaps()
