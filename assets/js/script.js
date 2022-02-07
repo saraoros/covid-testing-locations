@@ -1,7 +1,7 @@
 
 var citySearchInput = document.querySelector('#location-input');
 
-var userCardEl = document.querySelector('card');
+var userCardEl = document.querySelector('.card');
 var searchButton = document.querySelector("#search");
 var recentsMenu = document.querySelector("#recents")
 
@@ -120,7 +120,7 @@ function history() {
 
 
 searchButton.addEventListener("click", search);
-recentsMenu.addEventListener("click", history())
+recentsMenu.addEventListener("click", history)
 
   
 
