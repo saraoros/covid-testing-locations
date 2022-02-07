@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    />
-    <title>Covid-19 Testing Locations</title>
-  </head>
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Covid-19 Testing Locations</h1>
-      <p class="lead">Find your local testing centers</p>
-    </header>
 
-    <!-- start of search input *** THIS CAN BE CHANGED & MODIFIED  *** -->
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4 mt-3">
-        <div class="card bg-light mb-3" style="max-width: 20rem">
-          <div class="card-header">Type Your City Here:</div>
-          <div class="card-body">
-            <input
-            id="cityName"
-              class="input is-info mr-5"
-              type="text"
-              placeholder="Info input"
-            />
-            <button type="submit" class="button is-link">Find Locations</button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/new-css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+  <title>Covid-19 Testing Locations</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Covid-19 Testing Locations</h1>
+    <p class="lead">Find your local testing centers</p>
+  </header>
+
+  <!-- start of search input *** THIS CAN BE CHANGED & MODIFIED  *** -->
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4 mt-3">
+      <div class="card bg-light mb-3" style="max-width: 20rem">
+        <div class="card-header">Type Your City Here:</div>
+        <div class="card-body">
+          <input id="cityName" class="input is-info mr-5" type="text" placeholder="Info input" />
+          <button type="submit" class="button is-link">Find Locations</button>
         </div>
       </div>
-    </main>
-    <!-- end of search input -->
+    </div>
+  </main>
+  <!-- end of search input -->
 
 
-    <!-- ** goodwin's original input **
+  <!-- ** goodwin's original input **
     <div class="search-bar">
         <h2>Type Your City Here</h2>
         <input name="city-name" type="text" autofocus="true" class="form-input"/>
         <button type="submit" class="btn">Find Locations</button>
     </div> -->
-    <!-- end of search input -->
+  <!-- end of search input -->
 
-    <div class="locations-list"></div>
+  <div class="locations-list"></div>
 
-    <!-- Start of google map-->
-    <div id="map"></div>
+  <!-- Start of google map-->
+  <h1>Google Map goes here </h1>
 
-    <!--End of google map-->
+  <div id="map">
+  </div>
+
+  <!--End of google map-->
 
 
-    <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
-    <!--google maps api link-->
-    <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ru-kBu2WnKkfIqZ6EgENC-cnbppoeRo&callback=initMap"
-    ></script>
-  </body>
+  <!--google maps api link-->
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2"
+  async
+></script>
+  <!-- <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ru-kBu2WnKkfIqZ6EgENC-cnbppoeRo&callback=initMap"></script> -->
+</body>
+
 </html>
