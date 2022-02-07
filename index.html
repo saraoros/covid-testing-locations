@@ -4,11 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+<!-- START of Makayla's style sheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Covid-19 Testing Locations</title>
+<!-- END Makayla's style sheets -->
+    
+    
+   
+<!-- START of Lola's style sheet links -->
+    <link rel="stylesheet" href="./assets/uikit-3.10.1/css/uikit.min.css" />
+    <!-- I commented out the previous css for my new-css to work, note the path in the href attribute below -->
+    <link rel="stylesheet" href="./assets/new-css/style.css" />
+<!-- *** removed 'title' duplicate from here! *** -->
   </head>
+
   <body>
+    
+    
+    
+<!-- *** START Makayla's Code *** -->
     <header class="jumbotron">
       <h1 class="display-3">Covid-19 Testing Locations</h1>
       <p class="lead">Find your local testing centers</p>
@@ -21,6 +38,9 @@
     </div>
     </header>
 
+    
+    
+    
     <!-- start of search input *** THE CLASSES WILL NEED TO BE CHANGED to REFLECT CSS LIBRARY  *** -->
     <div class="columns is-mobile">
         <div class="column">
@@ -39,25 +59,77 @@
             </div>
         </div>    
     </div>
-    <!-- end of search input -->
 
+<!-- END Makayla's code -->
+    
+    
+    
+    <div class="uk-container">
+      <header class="jumbotron">
+        <h1 class="display-3 uk-heading-small">Covid Testing Locations</h1>
+        <p class="lead">Find your local testing centers</p>
+      </header>
+      <div id="main-content" class="uk-child-width-1-2 uk-text-center" uk-grid>
+        <div id="left-panel">
+          <section id="map-area" class="uk-card uk-card-default uk-card-body">
+            <div id="map"></div>
 
-    <!-- ** goodwin's original input **
-    <div class="search-bar">
-        <h2>Type Your City Here</h2>
-        <input name="city-name" type="text" autofocus="true" class="form-input"/>
-        <button type="submit" class="btn">Find Locations</button>
-    </div> -->
-    <!-- end of search input -->
+          </section>
+        </div>
+        <div id="right-panel">
+          <section class="uk-card uk-card-default uk-card-body">
+            <!-- <h2>Type Your City Here</h2> -->
+            <div class="uk-margin search-bar">
+              <form class="uk-search uk-search-default">
+                <span uk-search-icon></span>
+                <input
+                  id="location-input"
+                  class="uk-search-input"
+                  type="search"
+                  placeholder="Type your city here"
+                />
+              </form>
+            </div>
+            <button type="submit" class="btn uk-button uk-button-primary">
+              Find Locations
+            </button>
+          </section>
 
-    <div class="locations-list"></div>
+          <div id="locations-list" class="uk-card uk-card-default uk-card-body">
+            <div class="uk-child-width-expand@s" uk-grid>
+              <div>
+                <h4>Locations</h4>
+                <ul class="uk-list">
+                  <li class="location-data">
+                    <p class="location-data-p">
+                      1180 Arcade St Saint Paul, MN 55106
+                    </p>
+                  </li>
+                  <li class="location-data">
+                    <p class="location-data-p">
+                      1700 Rice St Saint Paul, MN 55113
+                    </p>
+                  </li>
+                  <li class="location-data">
+                    <p class="location-data-p">
+                      1401 Maryland Ave E Saint Paul, MN 55106
+                    </p>
+                  </li>
+                  <li class="location-data">
+                    <p class="location-data-p">
+                      1133 Robert St S West Saint Paul, MN 55118
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Start of google map-->
-    <div id="map"></div>
-
-    <!--End of google map-->
-
-
+    <script src="./assets/uikit-3.10.1/js/uikit.min.js"></script>
+    <script src="./assets/uikit-3.10.1/js/uikit-icons.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
     <!--google maps api link-->
