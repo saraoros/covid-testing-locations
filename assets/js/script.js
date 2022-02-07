@@ -1,8 +1,9 @@
+
 var citySearchInput = document.querySelector('#location-input');
 
-
-
-
+var userCardEl = document.querySelector('card');
+var searchButton = document.querySelector("#search");
+var recentsMenu = document.querySelector("#recents")
 
 
 // // TA Daniel said that something in the lines of this will be us connecting google maps API and the covid api
@@ -74,14 +75,55 @@ function initMap() {
 
 getLatLon();
 
-var formSubmitHandler = function (event) {
-    // prevents page from refreshing
-    event.preventDefault();
+function search () {
+    // TO DO: fetch results from APIs
+    
+
+    // calls saveSearch function to save to localstorage 
+    saveSearch();
+}
+
+function saveSearch () {
+    userInputEl = document.querySelector("input[name='userInput']").value;
+
+    var search = userInputEl;
+
+    if (search !== "") {
+        // pull from local storage
+        var previousSearch = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
+
+        // variable for search input
+        var currentSearch = {
+            city: userInputEl
+        }
+
+        //save to localStorage
+        previousSearch.push(currentSearch);
+        window.localStorage.setItem("searchHistory", JSON.stringify(previousSearch));
+    };
+    //reloads page doesn't display duplicates of localStorage
+    location.reload();
+    history();
+};
+
+function history() {
+    var previousSearchHistory = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
+
+    previousSearchHistory.forEach(function(city){
+        var optionEl = document.createElement("option");
+        optionEl.textContent = city.city
+
+        var selectEl = document.querySelector("#selectEl")
+        selectEl.appendChild(optionEl)
+    });
+};
+
+
+searchButton.addEventListener("click", search);
+recentsMenu.addEventListener("click", history())
+
   
-    // get value from input element??
-    // *** this isn't working! Need help correcting it. -so ***
-    cities = cityInput.value.trim();
 
-  };
 
-  userCardEl.addEventListener('click', formSubmitHandler);
+
+
