@@ -1,5 +1,5 @@
-var cityInput = document.querySelector('#cityName');
-var userCardEl = document.querySelector('card');
+var citySearchInput = document.querySelector('#location-input');
+
 
 
 
