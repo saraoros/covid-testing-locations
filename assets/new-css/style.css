@@ -71,10 +71,12 @@ iframe {
   background-color: lemonchiffon;
 }
 
-#location-input:focus {
+#searchInput:focus {
   background: lemonchiffon;
 }
+
 /*# sourceMappingURL=style.css.map */
 #map {
   height: 100%;
 }
+/*# sourceMappingURL=style.css.map */
