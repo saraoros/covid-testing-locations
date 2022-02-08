@@ -39,13 +39,14 @@ function getHereData(lat, lon) {
     });
 }
 
+
 // openweather api to capture the lat & lon of the cities inputed
 function getLatLon() {
   var cityUrl =
     'http://api.openweathermap.org/geo/1.0/direct?q=' +
     citySearchInput.value +
     '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
-  console.log('Get Lat Lon ', cityUrl);
+  // console.log('Get Lat Lon ', cityUrl);
 
   fetch(cityUrl)
     .then(function (response) {
@@ -68,7 +69,6 @@ function getLatLon() {
 
 function search(event) {
   event.preventDefault();
-  // var inputEl = document.getElementById("searchInput").value;
 
   // calls saveSearch function to save to localstorage
   getLatLon();
@@ -118,7 +118,7 @@ searchButton.addEventListener('click', search);
 
 
 
-// Initialize and add the map
+// Initialize and add the map ** We NEED initMap ***
 function initMap(lat, lon) {
   console.log('Calling google maps ....');
   // The location of the city searched
@@ -134,6 +134,5 @@ function initMap(lat, lon) {
     position: city,
     map: map,
   });
-  console.log('End of google maps');
 }
 
