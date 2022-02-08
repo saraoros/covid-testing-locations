@@ -8013,7 +8013,7 @@ iframe[data-uk-cover] {
  */
 .uk-responsive-height {
   /* 1 */
-  max-height: 100%;
+  max-height: 100
   /* 2 */
   width: auto;
   /* 3 */
