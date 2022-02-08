@@ -67,6 +67,8 @@ function getLatLon() {
 
 
 
+
+
 function search(event) {
   event.preventDefault();
 
