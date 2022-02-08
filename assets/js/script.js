@@ -1,4 +1,4 @@
-var cityInput = document.querySelector('#cityName');
+//var citySearchInput = document.querySelector('#cityName');
 //Find Location Button 
 var citySearchInput = document.querySelector('#searchInput');
 var userCardEl = document.querySelector('.card');
@@ -48,25 +48,30 @@ var hereApi = "IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U";
 // openweather api to capture the lat & lon of the cities inputed
 function getLatLon() {
 
-  var cityUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityInput.value + '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
-  console.log("Get Lat Lon ", cityUrl);
+ // var cityUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=london&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+  var cityUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=113200bab49467606bb2319ca3ecb8e8';
 
+
+//  console.log("Get Lat Lon ", cityUrl);
+// console.log(getLatLon);
   fetch(cityUrl)
+
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
-      var lat = data[0].lat;
-      var lon = data[0].lon;
-      //cities.push(['London', lat, lon]);
-      console.log("previous cities stored ", cities);
-      cities.push([cityInput.value.trim(), lat, lon]);
+    // .then(function (data) {
+    //   console.log(data);
+    //   var lat = data[0].lat;
+    //   var lon = data[0].lon;
+    //   //cities.push(['London', lat, lon]);
+    //   console.log("previous cities stored ", cities);
+    //   cities.push([citySearchInput.value.trim(), lat, lon])
 
-      localStorage.setItem('cities', JSON.stringify(cities));
+
+    //   localStorage.setItem('cities', JSON.stringify(cities));
 
      
-    });
+    // });
 }
 
 // *** MOST LIKELY WON'T BE USING GOOGLE MAPS API ANY MORE ***
