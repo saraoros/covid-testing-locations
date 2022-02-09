@@ -41,6 +41,17 @@ https://saraoros.github.io/covid-testing-locations/
 
 https://github.com/saraoros/covid-testing-locations
 
+## APIs used
+
+- Google Maps:
+  https://developers.google.com/maps/documentation/javascript/overview
+
+- Here:
+  https://developer.here.com/
+
+- Open Weather:
+  https://openweathermap.org/api/one-call-api
+
 ## Screenshots:
 
 <img src="./assets/images/ss1.png">
