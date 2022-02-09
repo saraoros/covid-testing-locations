@@ -17,7 +17,7 @@ To build an interactive front-end project with the University of MN coding bootc
 
 As someone in the United States
 I want to see COVID-19 testing locations
-So that I can be tested for COVID-19
+so that I can be tested for COVID-19.
 
 ## Project requirements:
 
@@ -33,7 +33,7 @@ So that I can be tested for COVID-19
 - Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application)
 - Add project to the portfolio that you created in Module 2.
 
-## Link to Deployed page: 
+## Link to Deployed page:
 
 https://saraoros.github.io/covid-testing-locations/
 
@@ -44,5 +44,3 @@ https://github.com/saraoros/covid-testing-locations
 ## Screenshots:
 
 <img src="./assets/images/ss1.png">
-
-
