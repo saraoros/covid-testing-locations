@@ -1,5 +1,5 @@
 // start of global variables
-var citySearchInput = document.querySelector('#searchInput');
+var citySearchInput = document.querySelector("input[name='userInput']").value;
 var userCardEl = document.querySelector('.card');
 var searchButton = document.querySelector('#search');
 var recentsMenu = document.querySelector('#recents');
@@ -121,11 +121,14 @@ function history() {
     JSON.parse(window.localStorage.getItem('searchHistory')) || [];
 
   previousSearchHistory.forEach(function (city) {
-    var optionEl = document.createElement('option');
-    optionEl.textContent = city.city;
+    var liEl = document.createElement("li");
+    var optionEl = document.createElement("a");
+    optionEl.setAttribute("href","#");
+    optionEl.innerHTML = city.city
 
-    var selectEl = document.querySelector('#selectEl');
-    selectEl.appendChild(optionEl);
+    var selectEl = document.querySelector("#selectEl")
+    selectEl.appendChild(liEl)
+    liEl.appendChild(optionEl)
   });
 }
 
