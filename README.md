@@ -52,6 +52,11 @@ https://github.com/saraoros/covid-testing-locations
 - Open Weather:
   https://openweathermap.org/api/one-call-api
 
+## CSS Framework used
+
+- UIKit:
+  https://getuikit.com/
+
 ## Screenshots:
 
 <img src="./assets/images/ss1.png">
