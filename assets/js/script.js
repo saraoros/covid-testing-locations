@@ -8,11 +8,12 @@ var cities = JSON.parse(localStorage.getItem('cities')) || [];
 var hereApi = 'IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U';
 var opApi = '113200bab49467606bb2319ca3ecb8e8';
 var map;
-
+var locations=[]; 
 
 
 // Use that lat & lon to plug into the HERE api & initMap function
 function getHereData(lat, lon) {
+  locationContainer.innerHTML="";
   var hereURL =
     'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at=' +
     lat +
@@ -33,9 +34,22 @@ function getHereData(lat, lon) {
         p.classList.add('location-data-p');
         p.textContent = data.items[i].address.label;
 
+        //add values to your locatioin variable 
+        var locationInfo = {
+          name: data.items[i].address.city, 
+          lat: data.items[i].position.lat,
+          lng: data.items[i].position.lng,
+          title: data.items[i].title
+        }
+        //updating the Array values 
+        locations.push(locationInfo); 
+
         li.appendChild(p);
         locationContainer.appendChild(li);
       }
+      //all the location Info Array 
+      console.log("All locations", locations); 
+      initMap(); 
     });
 }
 
@@ -126,15 +140,47 @@ function initMap(lat, lon) {
   // The location of the city searched
   const city = { lat: lat, lng: lon };
   
-  // The map, centered at the city searched
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: city,
-  });
-  // The marker, positioned at the city searched
-  const marker = new google.maps.Marker({
-    position: city,
-    map: map,
-  });
+  // //The map, centered at the city searched
+  // const map = new google.maps.Map(document.getElementById('map'), {
+  //   zoom: 8,
+  //   center: city,
+  // });
+  // //The marker, positioned at the city searched
+  // const marker = new google.maps.Marker({
+  //   position: city,
+  //   map: map,
+  // });
+
+  //Multiple - Markers on the MAP 
+  console.log('Looping through all locations for  google maps ....', locations.length);
+  var infowindow = new google.maps.InfoWindow();
+
+  for (var index =0; index < locations.length; index++){
+    var myCoords= { lat: locations[index].lat, lng: locations[index].lng };
+    // console.log("myCoords", myCoords); 
+
+    var mapOptions = {
+        zoom: 14,
+        center: myCoords,
+    }; 
+
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    // The marker, positioned at the locations searched
+    const marker = new google.maps.Marker({
+      position: myCoords,
+      map: map,
+      title: locations[index].title
+    });
+    // console.log(marker); 
+    marker.setMap(map);
+
+    // google.maps.event.addListener(marker, 'click', (function(marker, index) {
+    //   return function() {
+    //     infowindow.setContent(locations[index].name);
+    //     infowindow.open(map, marker);
+    //   }
+    // })(marker, index));
+  }
 }
 
