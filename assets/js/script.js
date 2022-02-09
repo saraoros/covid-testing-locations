@@ -59,7 +59,7 @@ function getLatLon() {
   var cityUrl =
     'http://api.openweathermap.org/geo/1.0/direct?q=' +
     citySearchInput.value +
-    '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+    '&limit=10&appid=113200bab49467606bb2319ca3ecb8e8';
   // console.log('Get Lat Lon ', cityUrl);
 
   fetch(cityUrl)
