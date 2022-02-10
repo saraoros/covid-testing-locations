@@ -12,7 +12,7 @@ var opApi = '113200bab49467606bb2319ca3ecb8e8';
 var map;
 var locations=[]; 
 
-window.onload = history()
+window.onload = history();
 // Use that lat & lon to plug into the HERE api & initMap function
 function getHereData(lat, lon) {
   locationContainer.innerHTML="";
@@ -148,17 +148,18 @@ function history() {
     
     optionEl.addEventListener("click", recentsClick);
 
+    
     function recentsClick() {
       
-      var cityUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+optionEl.innerHTML+'&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+      var cityUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+optionEl.innerHTML+'&appid=113200bab49467606bb2319ca3ecb8e8';
       fetch(cityUrl)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
           console.log(data);
-          var lat = data[0].lat;
-          var lon = data[0].lon;
+          var lon = data.coord.lon;
+          var lat = data.coord.lat;
     
           initMap(lat, lon);
           getHereData(lat, lon);
