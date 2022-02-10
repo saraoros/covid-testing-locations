@@ -1,5 +1,6 @@
 // start of global variables
-var citySearchInput = document.querySelector("input[name='userInput']").value;
+var citySearchInput = document.querySelector("#location-input");
+var userInputEl = document.querySelector("input[name='userInput']").value
 var userCardEl = document.querySelector('.card');
 var searchButton = document.querySelector('#search');
 var recentsMenu = document.querySelector('#recents');
@@ -11,15 +12,13 @@ var opApi = '113200bab49467606bb2319ca3ecb8e8';
 var map;
 var locations=[]; 
 
-
+window.onload = history()
 // Use that lat & lon to plug into the HERE api & initMap function
 function getHereData(lat, lon) {
   locationContainer.innerHTML="";
   var hereURL =
-    'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at=' +
-    lat +
-    ',' +
-    lon +
+    'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at='+lat+
+    ',' +lon+
     '&limit=6';
   fetch(hereURL)
     .then(function (response) {
@@ -58,9 +57,9 @@ function getHereData(lat, lon) {
 // openweather api to capture the lat & lon of the cities inputed
 function getLatLon() {
   var cityUrl =
-    'http://api.openweathermap.org/geo/1.0/direct?q=' +
-    citySearchInput.value +
+    'http://api.openweathermap.org/geo/1.0/direct?q='+citySearchInput.value+
     '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+    console.log(cityUrl)
   // console.log('Get Lat Lon ', cityUrl);
 
   fetch(cityUrl)
@@ -71,19 +70,16 @@ function getLatLon() {
       console.log(data);
       var lat = data[0].lat;
       var lon = data[0].lon;
-      console.log('previous cities stored ', cities);
-      cities.push([citySearchInput.value.trim(), lat, lon]);
 
       initMap(lat, lon);
       getHereData(lat, lon);
-      localStorage.setItem('cities', JSON.stringify(cities));
     });
 }
 
 
 
-function search(event) {
-  event.preventDefault();
+function search() {
+  // event.preventDefault();
   mapText.remove();
   // calls saveSearch function to save to localstorage
   getLatLon();
@@ -109,7 +105,7 @@ function saveSearch() {
     previousSearch.push(currentSearch);
     window.localStorage.setItem(
       'searchHistory',
-      JSON.stringify(previousSearch)
+      JSON.stringify(previousSearch) 
     );
   }
   history();
@@ -119,20 +115,40 @@ function history() {
   var previousSearchHistory =
     JSON.parse(window.localStorage.getItem('searchHistory')) || [];
 
-  previousSearchHistory.forEach(function (city) {
+  previousSearchHistory.forEach(function (city) {    
     var liEl = document.createElement("li");
     var optionEl = document.createElement("a");
-    optionEl.setAttribute("href","#");
     optionEl.innerHTML = city.city
 
-    var selectEl = document.querySelector("#selectEl")
-    selectEl.appendChild(liEl)
-    liEl.appendChild(optionEl)
-  });
+    var selectEl = document.querySelector("#selectEl");
+    selectEl.appendChild(liEl);
+    liEl.appendChild(optionEl);
+    
+    optionEl.addEventListener("click", recentsClick);
+
+    function recentsClick() {
+      
+      var cityUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+optionEl.innerHTML+'&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+      fetch(cityUrl)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          var lat = data[0].lat;
+          var lon = data[0].lon;
+    
+          initMap(lat, lon);
+          getHereData(lat, lon);
+        });
+      };
+    
+  });  
+  
 }
 
 searchButton.addEventListener('click', search);
-//recentsMenu.addEventListener('click', history);
+
 
 
 
