@@ -56,11 +56,28 @@ function getHereData(lat, lon) {
 
 
 // openweather api to capture the lat & lon of the cities inputed
+// function getLatLon() {
+//   var cityUrl =
+//     'http://api.openweathermap.org/geo/1.0/direct?q=' +
+//     citySearchInput.value +
+//     '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+//   // console.log('Get Lat Lon ', cityUrl);
+
+//   fetch(cityUrl)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       var lat = data[0].lat;
+//       var lon = data[0].lon;
+
+// Modified api
 function getLatLon() {
   var cityUrl =
-    'http://api.openweathermap.org/geo/1.0/direct?q=' +
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
     citySearchInput.value +
-    '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+    '&appid=113200bab49467606bb2319ca3ecb8e8';
   // console.log('Get Lat Lon ', cityUrl);
 
   fetch(cityUrl)
@@ -69,8 +86,9 @@ function getLatLon() {
     })
     .then(function (data) {
       console.log(data);
-      var lat = data[0].lat;
-      var lon = data[0].lon;
+      var lon = data.coord.lon;
+      var lat = data.coord.lat;
+    
       console.log('previous cities stored ', cities);
       cities.push([citySearchInput.value.trim(), lat, lon]);
 
