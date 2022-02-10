@@ -58,10 +58,10 @@ function getHereData(lat, lon) {
 // openweather api to capture the lat & lon of the cities inputed
 function getLatLon() {
   var cityUrl =
-    'http://api.openweathermap.org/geo/1.0/direct?q=' +
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
     citySearchInput.value +
-    '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
-  // console.log('Get Lat Lon ', cityUrl);
+    '&appid=113200bab49467606bb2319ca3ecb8e8';
+    console.log(cityUrl)
 
   fetch(cityUrl)
     .then(function (response) {
@@ -69,8 +69,9 @@ function getLatLon() {
     })
     .then(function (data) {
       console.log(data);
-      var lat = data[0].lat;
-      var lon = data[0].lon;
+      var lon = data.coord.lon;
+      var lat = data.coord.lat;
+      
       console.log('previous cities stored ', cities);
       cities.push([citySearchInput.value.trim(), lat, lon]);
 
@@ -176,12 +177,12 @@ function initMap(lat, lon) {
 
 
 
-    google.maps.event.addListener(marker, 'click', (function(marker, index) {
-      return function() {
-        infowindow.setContent(locations[index].name);
-        infowindow.open(map, marker);
-      }
-    })(marker, index));
+    // google.maps.event.addListener(marker, 'click', (function(marker, index) {
+    //   return function() {
+    //     infowindow.setContent(locations[index].name);
+    //     infowindow.open(map, marker);
+    //   }
+    // })(marker, index));
   }
 }
 
