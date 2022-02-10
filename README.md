@@ -50,7 +50,7 @@ https://github.com/saraoros/covid-testing-locations
   https://developer.here.com/
 
 - Open Weather:
-  https://api.openweathermap.org/data/2.5/weather?
+  https://api.openweathermap.org/data/2.5/weather
 
 ## Screenshots:
 
