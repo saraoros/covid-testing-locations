@@ -58,7 +58,7 @@ function getHereData(lat, lon) {
 // openweather api to capture the lat & lon of the cities inputed
 function getLatLon() {
   var cityUrl =
-    'http://api.openweathermap.org/geo/1.0/direct?q=' +
+    'https://api.openweathermap.org/geo/1.0/direct?q=' +
     citySearchInput.value +
     '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
   // console.log('Get Lat Lon ', cityUrl);
