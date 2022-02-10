@@ -16,7 +16,7 @@ var locations=[];
 function getHereData(lat, lon) {
   locationContainer.innerHTML="";
   var hereURL =
-    'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at=' +
+    'http://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at=' +
     lat +
     ',' +
     lon +
