@@ -176,12 +176,12 @@ function initMap(lat, lon) {
 
 
 
-    google.maps.event.addListener(marker, 'click', (function(marker, index) {
-      return function() {
-        infowindow.setContent(locations[index].name);
-        infowindow.open(map, marker);
-      }
-    })(marker, index));
+//     google.maps.event.addListener(marker, 'click', (function(marker, index) {
+//       return function() {
+//         infowindow.setContent(locations[index].name);
+//         infowindow.open(map, marker);
+//       }
+//     })(marker, index));
   }
 }
 
