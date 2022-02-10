@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: lemonchiffon;
+  background-color: #fff;
 }
 
 #map {
@@ -28,6 +28,11 @@ body {
   margin: 0 auto;
 }
 
+#findTitle {
+  margin-bottom: 400px;
+  font-weight: 200;
+}
+
 
 #main-content {
   display: -webkit-box;
@@ -38,17 +43,19 @@ body {
 .jumbotron {
   padding: 1em 0;
   text-align: center;
-  height: 100px;
+  height: 200px;
   margin-bottom: 1em;
 }
 
 .jumbotron p {
   margin-top: 0;
+ 
 }
 
 #main-content {
   width: 100%;
   margin: 0 auto;
+  background-color: #B83928;
 }
 
 #locations-list {
@@ -70,9 +77,9 @@ body {
 .location-data:hover {
   -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
           box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  background-color: lemonchiffon;
+  background-color: #f1f7fa;
 }
 
 #searchInput:focus {
-  background: lemonchiffon;
+  background: #f1f7fa;
 }
