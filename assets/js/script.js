@@ -17,8 +17,10 @@ window.onload = history()
 function getHereData(lat, lon) {
   locationContainer.innerHTML="";
   var hereURL =
-    'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at='+lat+
-    ',' +lon+
+    'https://discover.search.hereapi.com/v1/discover?apikey=IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U&q=Covid&at=' +
+    lat +
+    ',' +
+    lon +
     '&limit=6';
   fetch(hereURL)
     .then(function (response) {
@@ -55,10 +57,29 @@ function getHereData(lat, lon) {
 
 
 // openweather api to capture the lat & lon of the cities inputed
+// function getLatLon() {
+//   var cityUrl =
+//     'http://api.openweathermap.org/geo/1.0/direct?q=' +
+//     citySearchInput.value +
+//     '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+//   // console.log('Get Lat Lon ', cityUrl);
+
+//   fetch(cityUrl)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       var lat = data[0].lat;
+//       var lon = data[0].lon;
+
+// Modified api
 function getLatLon() {
   var cityUrl =
-    'http://api.openweathermap.org/geo/1.0/direct?q='+citySearchInput.value+
-    '&limit=5&appid=113200bab49467606bb2319ca3ecb8e8';
+    console.log(cityUrl)
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
+    citySearchInput.value +
+    '&appid=113200bab49467606bb2319ca3ecb8e8';
     console.log(cityUrl)
   // console.log('Get Lat Lon ', cityUrl);
 
@@ -68,8 +89,11 @@ function getLatLon() {
     })
     .then(function (data) {
       console.log(data);
-      var lat = data[0].lat;
-      var lon = data[0].lon;
+      var lon = data.coord.lon;
+      var lat = data.coord.lat;
+    
+      console.log('previous cities stored ', cities);
+      cities.push([citySearchInput.value.trim(), lat, lon]);
 
       initMap(lat, lon);
       getHereData(lat, lon);
