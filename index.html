@@ -10,59 +10,58 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/uikit-3.10.1/js/uikit.min.js"></script>
    <script src="./assets/uikit-3.10.1/js/uikit-icons.min.js"></script>
-    
-    <title>Covid-19 Testing Locations</title>
+    <title>COVID-19 Testing Locations</title>
 
     <!-- I commented out the previous css for my new-css to work, note the path in the href attribute below -->
     <!-- **** When I uncomment the following link, the code breaks ***** -->
  <!-- <link rel="stylesheet" href="./assets/new-css/style.css" />  -->
   </head>
 
-<body>
-
-    <div class="uk-container">
+  <body> 
+    
+<div class="uk-container">
       <header class="jumbotron">
-        <h1 class="display-3 uk-heading-small">COVID-19 Testing Locations</h1>
-        <p class="lead">Find your local testing centers</p>
+        <h1 class="display-3 uk-heading-small uk-padding-bottom">
+          <img src="assets/images/covidimg.jpeg" /> COVID-19  Testing Locations</h1>
+        <p id="findTitle" class=" display-2 lead uk-padding-bottom">Find your local testing centers</p>
       </header>
 
-      
-      <div id="main-content" class="uk-child-width-1-2 uk-text-center" uk-grid>
+    
+
+      <div id="main-content" class="uk-child-width-1-2 uk-text-center uk-padding" uk-grid>
+
         <div id="left-panel">
-          <section id="map-area" class="uk-card uk-card-default uk-card-body">
-           <div id="map"></div> 
-          </div>
+          <section id="map-area" class="uk-card uk-card-default uk-card-body uk-padding-bottom">
+            <p id="map-text">Loading Google Maps...</p>
+           <div id="map"></div>
           </section>
+        </div>
+
         <div id="right-panel">
-          
-          
-          <section class="uk-card uk-card-default uk-card-body">
-          <!-- START OF SEARCH INPUT -->
-              <div class="columns is-mobile">
-        <div class="column">
-            <div class="field is-grouped is-grouped-centered">
-                <label class="label">Search by City</label>
-            </div>
-            <div class="field is-grouped is-grouped-centered">
-                <div class="control">
+          <div class="uk-card uk-card-default uk-card-body">
+            <!-- START OF SEARCH INPUT -->
+            <div class="columns is-mobile">
+              <div class="column">
+                <div class="field is-grouped is-grouped-centered">
+                  <label class="label">Search by City</label>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                  <div class="control">
                     <input id="searchInput" name="userInput" class="input is-hovered" type="text" placeholder="Enter City"/>
+                  </div>
+                  <div class="control">
+                    <button id="search" class="button is-info">Search</button>
+                  </div>
                 </div>
-                <div class="control">
-                    <button id="search" class="button is-info">
-                        Search
-                    </button>
-                </div>
+              </div>
             </div>
-        </div>    
-    </div>
-                    <!-- START OF SEARCH DROP DOWN-->
-              <div id="recents" class="select">
-        <select id="selectEl" class="is-hovered">
-           <option selected>Recent Searches</option>
-        </select> 
-   </div>     
-            
-          </section>
+            <!-- START OF SEARCH DROP DOWN-->
+            <div id="recents" class="select">
+              <select id="selectEl" class="is-hovered">
+                <option selected>Recent Searches</option>
+              </select>
+            </div>
+          </div>   
 
           <div id="locations-list" class="uk-card uk-card-default uk-card-body">
             <div class="uk-child-width-expand@s" uk-grid>
@@ -76,19 +75,17 @@
               </div>
             </div>
           </div>
-      
-
- </body>
-      
-     <!-- Google maps script script link-->
-    <script
+        </div> 
+      </div>
+    </div>  
+  </div>
+<!-- Google maps script script link-->
+ <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ru-kBu2WnKkfIqZ6EgENC-cnbppoeRo&callback=initMap"
     ></script>
-    <!-- end of Google maps script link -->
-
-    
+<!-- end of Google maps script link -->
+ </body> 
     <script src="./assets/js/script.js"></script>
-    
   
 </html> 

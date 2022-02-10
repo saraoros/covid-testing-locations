@@ -5,6 +5,7 @@ var searchButton = document.querySelector('#search');
 var recentsMenu = document.querySelector('#recents');
 var locationContainer = document.querySelector('#locationContainer');
 var cities = JSON.parse(localStorage.getItem('cities')) || [];
+var mapText = document.querySelector('#map-text');
 var hereApi = 'IWCxMl-XBQ7af097MScMolgpI49z7U7ow58AOleHG1U';
 var opApi = '113200bab49467606bb2319ca3ecb8e8';
 var map;
@@ -19,7 +20,7 @@ function getHereData(lat, lon) {
     lat +
     ',' +
     lon +
-    '&limit=10';
+    '&limit=6';
   fetch(hereURL)
     .then(function (response) {
       return response.json();
@@ -83,7 +84,7 @@ function getLatLon() {
 
 function search(event) {
   event.preventDefault();
-
+  mapText.remove();
   // calls saveSearch function to save to localstorage
   getLatLon();
   saveSearch();
