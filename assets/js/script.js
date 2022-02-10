@@ -138,17 +138,6 @@ function initMap(lat, lon) {
   // The location of the city searched
   const city = { lat: lat, lng: lon };
   
-  // //The map, centered at the city searched
-  // const map = new google.maps.Map(document.getElementById('map'), {
-  //   zoom: 8,
-  //   center: city,
-  // });
-  // //The marker, positioned at the city searched
-  // const marker = new google.maps.Marker({
-  //   position: city,
-  //   map: map,
-  // });
-
   //Multiple - Markers on the MAP 
   console.log('Looping through all locations for  google maps ....', locations.length);
   var infowindow = new google.maps.InfoWindow();
@@ -172,13 +161,6 @@ function initMap(lat, lon) {
     });
     // console.log(marker); 
     marker.setMap(map);
-
-    // google.maps.event.addListener(marker, 'click', (function(marker, index) {
-    //   return function() {
-    //     infowindow.setContent(locations[index].name);
-    //     infowindow.open(map, marker);
-    //   }
-    // })(marker, index));
   }
 }
 
