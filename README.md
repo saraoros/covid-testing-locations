@@ -1,4 +1,4 @@
-# covid-testing-locations
+# COVID-19 Testing Locations
 
 ## Synopsis:
 
@@ -50,7 +50,7 @@ https://github.com/saraoros/covid-testing-locations
   https://developer.here.com/
 
 - Open Weather:
-  https://openweathermap.org/api/one-call-api
+  https://api.openweathermap.org/data/2.5/weather?
 
 ## Screenshots:
 
