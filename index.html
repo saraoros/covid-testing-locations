@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+ 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
     <link rel="stylesheet" href="./assets/uikit-3.10.1/css/uikit.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -19,10 +19,10 @@
 
   <body> 
     
-<div class="uk-container">
+    <div class="uk-container">
       <header class="jumbotron">
         <h1 class="display-3 uk-heading-small uk-padding-bottom">
-          <img src="assets/images/covidimg.jpeg" /> COVID-19  Testing Locations</h1>
+        <img src="assets/images/covidimg.jpeg" /> COVID-19  Testing Locations</h1>
         <p id="findTitle" class=" display-2 lead uk-padding-bottom">Find your local testing centers</p>
       </header>
 
@@ -33,34 +33,42 @@
         <div id="left-panel">
           <section id="map-area" class="uk-card uk-card-default uk-card-body uk-padding-bottom">
             <p id="map-text">Loading Google Maps...</p>
-           <div id="map"></div>
+            <div id="map"></div>
           </section>
         </div>
 
         <div id="right-panel">
           <div class="uk-card uk-card-default uk-card-body">
-            <!-- START OF SEARCH INPUT -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <div class="field is-grouped is-grouped-centered">
-                  <label class="label">Search by City</label>
-                </div>
-                <div class="field is-grouped is-grouped-centered">
-                  <div class="control">
-                    <input id="searchInput" name="userInput" class="input is-hovered" type="text" placeholder="Enter City"/>
-                  </div>
-                  <div class="control">
-                    <button id="search" class="button is-info">Search</button>
-                  </div>
+            <!-- makayla's new code -->
+            <button class="uk-button uk-button-default" type="button">Recent Searches</button>
+            <div id="recents" class="uk-width-large" uk-dropdown="mode:click">
+              <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                <div>
+                  <ul id="selectEl" class="uk-nav uk-dropdown-nav">
+                    <li class="uk-active"><a href="#">Cities</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <!-- START OF SEARCH DROP DOWN-->
-            <div id="recents" class="select">
-              <select id="selectEl" class="is-hovered">
-                <option selected>Recent Searches</option>
-              </select>
+            <!-- end of makayla's -->
+
+            <!-- <h2>Type Your City Here</h2> -->
+            <div class="uk-margin search-bar">
+              <form class="uk-search uk-search-default">
+                <span uk-search-icon></span>
+                <input
+                  name="userInput"
+                  id="location-input"
+                  class="uk-search-input"
+                  type="text"
+                  placeholder="Type your city here"
+                />
+              
+              </form>
             </div>
+            <button id="search" type="submit" class="btn uk-button uk-button-primary">
+              Find Locations
+            </button>
           </div>   
 
           <div id="locations-list" class="uk-card uk-card-default uk-card-body">
@@ -77,15 +85,14 @@
           </div>
         </div> 
       </div>
-    </div>  
-  </div>
-<!-- Google maps script script link-->
- <script
+    </div> 
+    <!-- Google maps script script link-->
+    <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ru-kBu2WnKkfIqZ6EgENC-cnbppoeRo&callback=initMap"
     ></script>
-<!-- end of Google maps script link -->
- </body> 
     <script src="./assets/js/script.js"></script>
-  
+    <!-- end of Google maps script link -->
+  </body> 
+    
 </html> 
